@@ -1,0 +1,142 @@
+{
+  "docs": [
+    {
+      "doc_id": "vacation-policy",
+      "title": "Vacation & PTO Policy",
+      "chunks": [
+        {
+          "chunk_id": "vacation-policy#0",
+          "preview": "All full-time employees accrue paid time off (PTO) at a rate of 1.75 days per month, totaling 21 days per year. PTO accrual\u2026"
+        },
+        {
+          "chunk_id": "vacation-policy#1",
+          "preview": "Unused PTO carries over into the next calendar year, up to a maximum of 5 days. Any balance beyond 5 carried-over days is\u2026"
+        },
+        {
+          "chunk_id": "vacation-policy#2",
+          "preview": "To request time off, submit a request through the HR portal at least 5 business days in advance for absences of 3 days or fewer,\u2026"
+        },
+        {
+          "chunk_id": "vacation-policy#3",
+          "preview": "Sick leave is tracked separately from PTO and is not subject to the accrual cap. Employees receive 8 paid sick days per year,\u2026"
+        },
+        {
+          "chunk_id": "vacation-policy#4",
+          "preview": "New parents are eligible for 12 weeks of paid parental leave, separate from PTO and sick leave, available to any employee who has\u2026"
+        }
+      ]
+    },
+    {
+      "doc_id": "expense-policy",
+      "title": "Expense Reimbursement Policy",
+      "chunks": [
+        {
+          "chunk_id": "expense-policy#0",
+          "preview": "Employees may submit expense reports for business-related costs incurred while performing their job duties. All expense reports\u2026"
+        },
+        {
+          "chunk_id": "expense-policy#1",
+          "preview": "Meals during business travel are reimbursed up to $75 per day, itemized by breakfast ($15), lunch ($25), and dinner ($35).\u2026"
+        },
+        {
+          "chunk_id": "expense-policy#2",
+          "preview": "Airfare must be booked in economy class for flights under 6 hours and may be booked in premium economy for longer flights,\u2026"
+        },
+        {
+          "chunk_id": "expense-policy#3",
+          "preview": "Home office equipment (monitor, keyboard, chair) may be expensed up to $500 per calendar year for fully remote employees. This\u2026"
+        },
+        {
+          "chunk_id": "expense-policy#4",
+          "preview": "Mileage for personal vehicle use on company business is reimbursed at the current IRS standard mileage rate. Commuting between\u2026"
+        }
+      ]
+    },
+    {
+      "doc_id": "product-faq",
+      "title": "Product FAQ",
+      "chunks": [
+        {
+          "chunk_id": "product-faq#0",
+          "preview": "**What is Acme Cloud Corp.?** Acme is a cloud object storage service for teams to store, sync, and share files across devices. It\u2026"
+        },
+        {
+          "chunk_id": "product-faq#1",
+          "preview": "**What are the pricing tiers?** Acme offers three tiers: Starter (15 GB free), Team ($8/user/month for 1 TB pooled storage,\u2026"
+        },
+        {
+          "chunk_id": "product-faq#2",
+          "preview": "**How does file versioning work?** Every time a file is modified and synced, Acme stores a new version rather than overwriting\u2026"
+        },
+        {
+          "chunk_id": "product-faq#3",
+          "preview": "**Is my data encrypted?** Files are encrypted at rest using AES-256 and in transit using TLS 1.3. Shared links can optionally be\u2026"
+        },
+        {
+          "chunk_id": "product-faq#4",
+          "preview": "**Can I integrate Acme with other tools?** Yes. Acme provides a REST API and webhooks for file-upload and file-change events,\u2026"
+        },
+        {
+          "chunk_id": "product-faq#5",
+          "preview": "**What happens if I exceed my storage limit?** Accounts that exceed their plan's storage limit enter a 14-day grace period during\u2026"
+        }
+      ]
+    },
+    {
+      "doc_id": "onboarding-guide",
+      "title": "New Employee Onboarding Guide",
+      "chunks": [
+        {
+          "chunk_id": "onboarding-guide#0",
+          "preview": "Welcome to Acme! This guide covers your first two weeks. Before your start date, IT will ship you a laptop pre-loaded with\u2026"
+        },
+        {
+          "chunk_id": "onboarding-guide#1",
+          "preview": "On day one, your manager will walk you through account setup: your company email, SSO login for internal tools, and your first\u2026"
+        },
+        {
+          "chunk_id": "onboarding-guide#2",
+          "preview": "Your first week is intentionally light on deliverables. Expect a mix of 1:1 meetings with teammates, a walkthrough of the\u2026"
+        },
+        {
+          "chunk_id": "onboarding-guide#3",
+          "preview": "Every new employee is assigned an onboarding buddy \u2014 not their manager \u2014 as a low-pressure point of contact for questions that\u2026"
+        },
+        {
+          "chunk_id": "onboarding-guide#4",
+          "preview": "At the 30-day mark, you'll have a check-in with your manager to discuss how ramp-up is going and set goals for the next 60 days.\u2026"
+        }
+      ]
+    },
+    {
+      "doc_id": "security-policy",
+      "title": "Data Security & Access Policy",
+      "chunks": [
+        {
+          "chunk_id": "security-policy#0",
+          "preview": "All employees must use company-issued devices with full-disk encryption and an approved endpoint security agent for any work\u2026"
+        },
+        {
+          "chunk_id": "security-policy#1",
+          "preview": "Access to production systems follows the principle of least privilege. Engineers are granted read access to production logs and\u2026"
+        },
+        {
+          "chunk_id": "security-policy#2",
+          "preview": "Multi-factor authentication (MFA) is required for all internal tools, including email, the VPN, and the internal admin dashboard.\u2026"
+        },
+        {
+          "chunk_id": "security-policy#3",
+          "preview": "Customer data must never be copied to a personal device, personal cloud storage account, or removable media. When debugging a\u2026"
+        },
+        {
+          "chunk_id": "security-policy#4",
+          "preview": "Any suspected security incident \u2014 a lost device, a phishing attempt that was clicked, or unusual account activity \u2014 must be\u2026"
+        },
+        {
+          "chunk_id": "security-policy#5",
+          "preview": "All employees complete annual security awareness training, and engineers with production access complete an additional\u2026"
+        }
+      ]
+    }
+  ]
+}

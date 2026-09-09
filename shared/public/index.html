@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RAG Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="page-header">
+    <h1>RAG Demo</h1>
+    <details class="info-box" open>
+      <summary>INFO</summary>
+      <p>
+        Retrieval-Augmented Generation end-to-end demo. Ask a question below and watch each
+        stage of the pipeline light up: your question gets <strong>embedded</strong>,
+        matched against a <strong>knowledge base</strong> of real documents, assembled
+        into a <strong>prompt</strong>, and answered by <strong>AI</strong>
+        grounded only in what it retrieved, not general knowledge.
+      </p>
+      <p>
+        How it works on AWS:
+        <br />
+        S3 (docs) → Lambda → <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/titan-embedding-models.html"
+          target="_blank">Bedrock Titan Embeddings</a> → <a href="https://aws.amazon.com/s3/features/vectors/"
+          target="_blank">S3 Vectors</a> (k-NN
+        search) → <a href="https://aws.amazon.com/bedrock/" target="_blank">Bedrock</a> LLM model
+      </p>
+      <p>
+        The local Python and Node servers are interchangeable, both proxy <code>/api/ask</code>,
+        <code>/api/upload</code>, and <code>/api/corpus</code> to the same AWS backend.
+      </p>
+    </details>
+    <div class="settings-row">
+      <label class="settings-field">
+        Backend:
+        <select id="backendSelect">
+          <option value="5001">Python (:5001)</option>
+          <option value="5002">Node (:5002)</option>
+        </select>
+      </label>
+      <label class="settings-field">
+        Bedrock Inference Profile:
+        <input id="modelIdInput" type="text" value="" autocomplete="off" spellcheck="false" />
+      </label>
+      <p class="runtime-badge" id="runtimeBadge"></p>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="kb-panel" aria-label="Knowledge base">
+      <h2>Knowledge Base</h2>
+      <p class="kb-hint"><span id="docCount">–</span> documents, chunked into <span id="chunkCount">–</span> pieces and
+        embedded in S3 Vectors.</p>
+      <div id="kbCards" class="kb-cards"></div>
+
+      <div class="upload-box">
+        <label class="upload-label" for="fileInput">Add a document (.md)</label>
+        <input type="file" id="fileInput" accept=".md,text/markdown" />
+        <p class="upload-status" id="uploadStatus"></p>
+      </div>
+    </section>
+
+    <section class="ask-panel" aria-label="Ask a question">
+      <form id="askForm" class="ask-form">
+        <input id="queryInput" type="text" placeholder="e.g. How much PTO do I get, and does it carry over?"
+          autocomplete="off" required />
+        <button type="submit" id="askButton">Ask</button>
+      </form>
+      <div class="sample-questions" id="sampleQuestions"></div>
+
+      <ol class="pipeline" id="pipeline">
+        <li class="stage" data-stage="embed">
+          <div class="stage-label">
+            <span class="stage-icon">①</span> Embed the question
+            <span class="info-icon" tabindex="0" data-tooltip="Turns your question into a vector (a list of numbers) that captures its meaning, so it can be compared to stored chunks.">ⓘ</span>
+          </div>
+          <div class="stage-body" data-body="embed"></div>
+        </li>
+        <li class="stage" data-stage="search">
+          <div class="stage-label">
+            <span class="stage-icon">②</span> Retrieve matching chunks
+            <span class="info-icon" tabindex="0" data-tooltip="Finds the document chunks whose vectors are closest in meaning to your question, ranked by similarity score.">ⓘ</span>
+          </div>
+          <div class="stage-body" data-body="search"></div>
+        </li>
+        <li class="stage" data-stage="prompt">
+          <div class="stage-label">
+            <span class="stage-icon">③</span> Assemble the augmented prompt
+            <span class="info-icon" tabindex="0" data-tooltip="Combines instructions, the retrieved chunks, and your question into the exact text sent to the model.">ⓘ</span>
+          </div>
+          <div class="stage-body" data-body="prompt"></div>
+        </li>
+        <li class="stage" data-stage="answer">
+          <div class="stage-label">
+            <span class="stage-icon">④</span> Generate the answer
+            <span class="info-icon" tabindex="0" data-tooltip="Sends that prompt to Claude on Bedrock, which answers using only the retrieved context - not general knowledge.">ⓘ</span>
+          </div>
+          <div class="stage-body" data-body="answer"></div>
+        </li>
+      </ol>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
